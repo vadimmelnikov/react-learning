@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
 import styles from './css/style.css';
+import Router from './components/Router';
 
 
-render(<App/>, document.querySelector('#main'));
+render(<Router/>, document.querySelector('#main'));
