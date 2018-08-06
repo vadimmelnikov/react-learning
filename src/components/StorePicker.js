@@ -7,17 +7,19 @@ class StorePicker extends React.Component {
 
     myInput = React.createRef();
 
-    goToStore = event => {
+    goToStore = (event) => {
         // 1. Stop default submiting
         event.preventDefault();
         // 2. Get text from the input
-
+        const storeName = this.myInput.current.value;
         // 3. Change the page to /store/whatever-asdasd
-        console.log(this.setState);
-    }
+
+        this.props.history.push(`/store/${storeName}`);
+
+    };
     componentDidMount() {
-        console.log('Mounted');
-        console.log(this);
+        // console.log('Mounted');
+        // console.log(this);
     }
     render() {
         return (
@@ -28,8 +30,8 @@ class StorePicker extends React.Component {
                         type="text"
                         required
                         placeholder="Store Name"
-                        value={getFunName()}
                         ref={this.myInput}
+                        defaultValue={getFunName()}
                     />
                     <button type="submit">Visit Store</button>
                 </form>
